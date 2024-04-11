@@ -14,7 +14,7 @@ public class GameLoop implements Runnable {
     private final static String TAG = GameLoop.class.getSimpleName();
 
     public final static int TARGET_FRAME_RATE = 30;
-    private final static int TICK_TIME = 1000 / TARGET_FRAME_RATE;
+    private final static int TICK_TIME = 1000 / TARGET_FRAME_RATE; //чтобы игра не бежала вперёд и было понятно что происходит
     private final static int MAX_FRAME_SKIPS = 1;
 
     private final Renderer mRenderer;
@@ -59,22 +59,22 @@ public class GameLoop implements Runnable {
 
     public void start() {
         if (!mRunning) {
-            Log.i(TAG, "Starting game loop");
+            Log.i(TAG, "Плохое решение...");
             mRunning = true;
             mGameThread = new Thread(this);
-            mGameThread.start();
+            mGameThread.start(); //дальше Бога нет. 
         }
     }
 
     public void stop() {
         if (mRunning) {
-            Log.i(TAG, "Stopping game loop");
+            Log.i(TAG, "Вырубай нахуй");
             mRunning = false;
 
             try {
                 mGameThread.join();
             } catch (InterruptedException e) {
-                throw new RuntimeException("Could not stop game thread!", e);
+                throw new RuntimeException("Оно неостановимо!", e); //оно неостановимо
             }
         }
     }
@@ -116,13 +116,13 @@ public class GameLoop implements Runnable {
                 loopCount++;
             }
 
-            // process messages a last time (needed to save game just before loop stops)
+            // process messages в последнюю очередь. уже похер так как сохранений не будет
             mMessageQueue.processMessages();
 
         } catch (Exception e) {
             mRunning = false;
             notifyErrorListeners(loopCount, e);
-            throw new RuntimeException("Error in game loop!", e);
+            throw new RuntimeException("ВСЕ СЛОМАЛОСЬ ЮРА ", e);
         }
     }
 
