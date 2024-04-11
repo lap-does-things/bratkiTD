@@ -41,12 +41,13 @@ public class GameActivity extends AnutoActivity {
         return ActivityType.Game;
     }
 
+//МЫ ТРАХАЕМ ИЛИ КАК???? 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mGameLoader.autoLoadGame();
 
         super.onCreate(savedInstanceState);
-
+//этот вью можно контрооить через view 
         setContentView(R.layout.activity_game);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -76,6 +77,7 @@ public class GameActivity extends AnutoActivity {
         }
     }
 
+//выбирать тавера
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
