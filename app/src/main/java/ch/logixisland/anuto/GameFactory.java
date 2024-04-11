@@ -51,7 +51,7 @@ import ch.logixisland.anuto.entity.tower.Teleporter;
 
 public class GameFactory {
 
-    // Engine
+    // 
     private ThemeManager mThemeManager;
     private SoundManager mSoundManager;
     private SpriteFactory mSpriteFactory;
@@ -66,7 +66,7 @@ public class GameFactory {
     private GamePersister mGamePersister;
     private EntityRegistry mEntityRegistry;
 
-    // Business
+    // вырезать
     private ScoreBoard mScoreBoard;
     private HighScores mHighScores;
     private TowerSelector mTowerSelector;
@@ -90,7 +90,8 @@ public class GameFactory {
         initializeBusiness(context);
         registerPersisters();
     }
-
+// начало сексуальной активности
+// объявляем все объедки всех типов
     private void initializeEngine(Context context) {
         mViewport = new Viewport();
         mEntityStore = new EntityStore();
@@ -110,12 +111,14 @@ public class GameFactory {
     private void registerEntities() {
         mEntityRegistry.registerEntity(new BasicPlateau.Factory(), new BasicPlateau.Persister());
 
+//объявляем врагов
         mEntityRegistry.registerEntity(new Blob.Factory(), new Blob.Persister());
         mEntityRegistry.registerEntity(new Flyer.Factory(), new Flyer.Persister());
         mEntityRegistry.registerEntity(new Healer.Factory(), new Healer.Persister());
         mEntityRegistry.registerEntity(new Soldier.Factory(), new Soldier.Persister());
         mEntityRegistry.registerEntity(new Sprinter.Factory(), new Sprinter.Persister());
 
+//объявляем всё пушки
         mEntityRegistry.registerEntity(new Canon.Factory(), new Canon.Persister());
         mEntityRegistry.registerEntity(new DualCanon.Factory(), new DualCanon.Persister());
         mEntityRegistry.registerEntity(new MachineGun.Factory(), new MachineGun.Persister());
@@ -130,6 +133,7 @@ public class GameFactory {
         mEntityRegistry.registerEntity(new Teleporter.Factory(), new Teleporter.Persister());
     }
 
+//объявляем сервис
     private void initializeBusiness(Context context) {
         mMapRepository = new MapRepository();
         mSaveGameRepository = new SaveGameRepository(context);
