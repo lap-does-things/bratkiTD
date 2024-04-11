@@ -1,24 +1,11 @@
-# Anuto - Another Ugly Tower Defense
+YURA TI HUI, GLEB TI PENIS!!!!
 
-[![Project Dashboard](https://sourcespy.com/shield.svg)](https://sourcespy.com/github/mjaunandroidanuto/)
-
-<img src="./images/feature.png" width="400" />
-
-Anuto is yet another tower defense game for Android.
-However it features astonishing hand-drawn graphics and a smooth gameplay.
-
-## Download
-
-<a href="https://f-droid.org/packages/ch.logixisland.anuto" target="_blank">
-<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="100"/></a>
-<a href="https://play.google.com/store/apps/details?id=ch.logixisland.anuto" target="_blank">
-<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="100"/></a>
-
-## Beta Testing
-
-Become a [beta tester](https://play.google.com/apps/testing/ch.logixisland.anuto)!
-
-## How to play
+TODO :
+NAHUI SNESTI TUTORIAL
+NAHUI SNESTI MAPS
+NAHUI SNESTI SEBE BOSHKU
+NAHUI SNESTI COMMENTI
+NAHUI SNESTI REFACTORING
 
 - Buy new towers by dragging a tower from the inventory at the top onto the field.
   Make sure you have enough credits.
