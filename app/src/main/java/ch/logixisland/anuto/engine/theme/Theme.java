@@ -34,7 +34,7 @@ public class Theme {
                 break;
 
             default:
-                throw new RuntimeException("Unknown activity type!");
+                throw new RuntimeException("Ты не прописал активити");
         }
 
         return getResourceId(attrId);
