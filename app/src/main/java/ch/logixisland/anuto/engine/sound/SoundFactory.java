@@ -26,7 +26,7 @@ public class SoundFactory {
         mSoundPool = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
         mSoundMap = new HashMap<>();
 
-        // FIXME: This is a workaround because the first explosion effect has no sound otherwise
+        // ОБНАРУЖЕН КОСТЫЛЬ!!!!! только так иначе первый звук взрыва не сыграет
         createSound(R.raw.explosive3_bghgh);
     }
 
