@@ -60,6 +60,7 @@ public class EnemyProperties {
     }
 
     public Collection<WeaponType> getWeakAgainst() {
+
         return mWeakAgainst;
     }
 

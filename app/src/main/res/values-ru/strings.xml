@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name">Anuto TD</string>
+    <string name="app_name">Братки ТД</string>
 
     <string name="menu">Меню</string>
+    <string name="build_tower">Построить</string>
     <string name="next_wave">Следующая</string>
 
-    <string name="restart">Начать сначала</string>
+    <string name="restart">Рестарт</string>
+    <string name="save_game">Сохранить</string>
+    <string name="game_saved">Сохранено!</string>
+    <string name="load_game">Загрузить</string>
     <string name="change_map">Сменить карту</string>
     <string name="theme">Тема</string>
+    <string name="settings">Настройки</string>
+    <string name="delete">Удалить</string>
     <string name="sound">Звук</string>
 
+    <string name="change_theme">Сменить тему</string>
+    <string name="change_theme_warning">Игра перезапустится</string>
+    <string name="back_button_mode">Закрытие кнопкой Назад</string>
+    <string name="reset_highscores">Сбросить рекорды</string>
+    <string name="reset_highscores_warning">Точно?</string>
+    <string name="start_tutorial">нахуй иди</string>
+    <string name="start_tutorial_warning">нахуй иди</string>
+    <string name="transparent_menus">Прозрачные меню</string>
     <string name="game_over">Игра окончена!</string>
     <string name="score">Очки</string>
 
-    <string name="credits">Средства</string>
-    <string name="lives">Жизни</string>
+    <string name="credits">Деньги</string>
+    <string name="lives">ХП</string>
     <string name="wave">Волна</string>
     <string name="bonus">Бонус</string>
 
@@ -24,14 +38,15 @@
     <string name="range">Радиус действия</string>
     <string name="splash">Радиус взрыва</string>
     <string name="distance">Расстояние</string>
-    <string name="intensity">Интенсивность</string>
-    <string name="duration">Продолжительность</string>
+    <string name="intensity">Сила</string>
+    <string name="duration">Длительность</string>
     <string name="inflicted">Нанесено урона</string>
 
+    <string name="dps">ДПС</string>
     <string name="lock_target">Захват цели</string>
-    <string name="strategy">Стратегия</string>
+    <string name="strategy">Поведение</string>
     <string name="enhance">Улучшить</string>
-    <string name="upgrade">Модернизировать</string>
+    <string name="upgrade">Апгрейд</string>
     <string name="sell">Продать</string>
 
     <string name="on">Вкл</string>
@@ -45,5 +60,28 @@
 
     <string name="theme_original">Оригинальная</string>
     <string name="theme_dark">Тёмная</string>
+    <string name="theme_colour">Цветная</string>
+    <string name="enemy_stats">Враги</string>
+    <string name="name">"Имя : "</string>
+    <string name="health">ХП :</string>
+    <string name="speed">Скорость :</string>
+    <string name="reward">Награда :</string>
+    <string name="weak_against">Слаб против :</string>
+    <string name="strong_against">Силён против :</string>
+    <string name="none">Ничего</string>
+    <string name="enemy_healer">Звезда</string>
+    <string name="twice">Дважды</string>
+    <string name="laser">Лазер</string>
+    <string name="bullet">Пули</string>
+    <string name="glue">Клей</string>
+    <string name="enemy_soldier">Квадрат</string>
+    <string name="enemy_blob">Круг</string>
+    <string name="enemy_sprinter">Треугольник</string>
+    <string name="enemy_flyer">Трапеция</string>
+    <string name="explosive">Взрыв</string>
+    <string name="Laser">Лазер</string>
+    <string name="Bullet">Пули</string>
+    <string name="Glue">Клей</string>
+    <string name="Explosive">Взрыв</string>
 
 </resources>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:icon="@drawable/settings"
+
     android:title="@string/settings">
+    <!--android:icon="@drawable/settings"-->
     <ListPreference
         android:key="theme_index"
         android:defaultValue="0"
@@ -16,15 +17,6 @@
         android:key="transparent_menus_enabled"
         android:defaultValue="false"
         android:title="@string/transparent_menus" />
-    <ListPreference
-        android:key="back_button_mode"
-        android:defaultValue="@string/back_button_mode_disabled"
-        android:entries="@array/back_button_mode_entries"
-        android:entryValues="@array/back_button_mode_entry_values"
-        android:title="@string/back_button_mode" />
-    <Preference
-        android:key="start_tutorial"
-        android:title="@string/start_tutorial" />
     <Preference
         android:key="reset_highscores"
         android:title="@string/reset_highscores" />

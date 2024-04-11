@@ -10,9 +10,9 @@ import ch.logixisland.anuto.engine.theme.Theme;
 import ch.logixisland.anuto.util.math.MathUtils;
 
 public class HealthBar implements Drawable {
-    private static final float HEALTHBAR_WIDTH = 1.0f;
+    private static final float HEALTHBAR_WIDTH = 0.5f;
     private static final float HEALTHBAR_HEIGHT = 0.1f;
-    private static final float HEALTHBAR_OFFSET = 0.6f;
+    private static final float HEALTHBAR_OFFSET = 0f;
 
     private final Enemy mEntity;
     private static Paint mHealthBarBg = null;
@@ -48,3 +48,4 @@ public class HealthBar implements Drawable {
         }
     }
 }
+

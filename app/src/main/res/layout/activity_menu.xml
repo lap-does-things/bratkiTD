@@ -15,12 +15,6 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@mipmap/icon" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
@@ -31,27 +25,6 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:text="@string/restart" />
-
-        <Button
-            android:id="@+id/btn_save_game"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@string/save_game" />
-
-        <Button
-            android:id="@+id/btn_load_game"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@string/load_game" />
-
-        <Button
-            android:id="@+id/btn_change_map"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@string/change_map" />
 
         <Space
             android:layout_width="match_parent"

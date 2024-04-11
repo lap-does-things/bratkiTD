@@ -11,13 +11,12 @@ import ch.logixisland.anuto.AnutoApplication;
 import ch.logixisland.anuto.GameFactory;
 import ch.logixisland.anuto.R;
 import ch.logixisland.anuto.business.game.GameLoader;
-import ch.logixisland.anuto.business.game.GameSaver;
-import ch.logixisland.anuto.business.game.GameState;
+//import ch.logixisland.anuto.business.game.GameSaver;
+//import ch.logixisland.anuto.business.game.GameState;
 import ch.logixisland.anuto.business.game.SaveGameRepository;
 import ch.logixisland.anuto.engine.theme.ActivityType;
 import ch.logixisland.anuto.view.AnutoActivity;
-import ch.logixisland.anuto.view.load.LoadGameActivity;
-import ch.logixisland.anuto.view.map.ChangeMapActivity;
+//import ch.logixisland.anuto.view.load.LoadGameActivity;
 import ch.logixisland.anuto.view.setting.SettingsActivity;
 import ch.logixisland.anuto.view.stats.EnemyStatsActivity;
 
@@ -30,16 +29,15 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
 
     private final SaveGameRepository mSaveGameRepository;
     private final GameLoader mGameLoader;
-    private final GameSaver mGameSaver;
-    private final GameState mGameState;
+
 
     private View activity_menu;
     private View menu_layout;
 
     private Button btn_restart;
-    private Button btn_change_map;
-    private Button btn_save_game;
-    private Button btn_load_game;
+    //private Button btn_change_map;
+   // private Button btn_save_game;
+   // private Button btn_load_game;
     private Button btn_enemy_stats;
     private Button btn_settings;
 
@@ -47,8 +45,7 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         GameFactory factory = AnutoApplication.getInstance().getGameFactory();
         mSaveGameRepository = factory.getSaveGameRepository();
         mGameLoader = factory.getGameLoader();
-        mGameSaver = factory.getGameSaver();
-        mGameState = factory.getGameState();
+
     }
 
     @Override
@@ -62,9 +59,9 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         setContentView(R.layout.activity_menu);
 // Кнопки создаём
         btn_restart = findViewById(R.id.btn_restart);
-        btn_change_map = findViewById(R.id.btn_change_map);
-        btn_save_game = findViewById(R.id.btn_save_game);
-        btn_load_game = findViewById(R.id.btn_load_game);
+        //btn_change_map = findViewById(R.id.btn_change_map);
+      //  btn_save_game = findViewById(R.id.btn_save_game);
+      //  btn_load_game = findViewById(R.id.btn_load_game);
         btn_enemy_stats = findViewById(R.id.btn_enemy_stats);
         btn_settings = findViewById(R.id.btn_settings);
 
@@ -72,14 +69,14 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         menu_layout = findViewById(R.id.menu_layout);
 
         btn_restart.setOnClickListener(this);
-        btn_change_map.setOnClickListener(this);
-        btn_save_game.setOnClickListener(this);
-        btn_load_game.setOnClickListener(this);
+        //btn_change_map.setOnClickListener(this);
+       // btn_save_game.setOnClickListener(this);
+       // btn_load_game.setOnClickListener(this);
         btn_enemy_stats.setOnClickListener(this);
         btn_settings.setOnClickListener(this);
  
 // сохранение       btn_save_game.setEnabled(mGameState.isGameStarted());
-        btn_load_game.setEnabled(!mSaveGameRepository.getSaveGameInfos().isEmpty());
+        //btn_load_game.setEnabled(!mSaveGameRepository.getSaveGameInfos().isEmpty());
 
         activity_menu.setOnTouchListener(this);
         menu_layout.setOnTouchListener(this);
@@ -93,24 +90,24 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
             return;
         }
 
-        if (view == btn_change_map) {
-            Intent intent = new Intent(this, ChangeMapActivity.class);
-            startActivityForResult(intent, REQUEST_CHANGE_MAP);
-            return;
-        }
+        //if (view == btn_change_map) {
+        //    Intent intent = new Intent(this, ChangeMapActivity.class);
+        //    startActivityForResult(intent, REQUEST_CHANGE_MAP);
+        //    return;
+        //}
 
-        if (view == btn_save_game) {
-            mGameSaver.saveGame();
-            btn_load_game.setEnabled(true);
-            Toast.makeText(this, getString(R.string.game_saved), Toast.LENGTH_SHORT).show();
-            return;
-        }
+      //  if (view == btn_save_game) {
+       //     mGameSaver.saveGame();
+       //     btn_load_game.setEnabled(true);
+        //     Toast.makeText(this, getString(R.string.game_saved), Toast.LENGTH_SHORT).show();
+       //     return;
+       // }
 
-        if (view == btn_load_game) {
-            Intent intent = new Intent(this, LoadGameActivity.class);
-            startActivityForResult(intent, REQUEST_LOADMENU);
-            return;
-        }
+       // if (view == btn_load_game) {
+      //      Intent intent = new Intent(this, LoadGameActivity.class);
+      //      startActivityForResult(intent, REQUEST_LOADMENU);
+      //      return;
+      //  }
 
         if (view == btn_enemy_stats) {
             Intent intent = new Intent(this, EnemyStatsActivity.class);
