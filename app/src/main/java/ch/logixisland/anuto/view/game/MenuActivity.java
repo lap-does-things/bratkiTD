@@ -60,7 +60,7 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+// Кнопки создаём
         btn_restart = findViewById(R.id.btn_restart);
         btn_change_map = findViewById(R.id.btn_change_map);
         btn_save_game = findViewById(R.id.btn_save_game);
@@ -77,7 +77,8 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         btn_load_game.setOnClickListener(this);
         btn_enemy_stats.setOnClickListener(this);
         btn_settings.setOnClickListener(this);
-        btn_save_game.setEnabled(mGameState.isGameStarted());
+ 
+// сохранение       btn_save_game.setEnabled(mGameState.isGameStarted());
         btn_load_game.setEnabled(!mSaveGameRepository.getSaveGameInfos().isEmpty());
 
         activity_menu.setOnTouchListener(this);
