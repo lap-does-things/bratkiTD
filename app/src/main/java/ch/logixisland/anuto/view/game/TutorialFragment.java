@@ -30,12 +30,13 @@ public class TutorialFragment extends AnutoFragment implements TutorialControl.T
         mHandler = new Handler();
         mVisible = true;
     }
-
+// вырезать это
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
-
+// ну или хоть это
+//Малышкин прости
         txt_content = view.findViewById(R.id.txt_content);
         btn_got_it = view.findViewById(R.id.btn_got_it);
         btn_skip = view.findViewById(R.id.btn_skip);
@@ -62,14 +63,17 @@ public class TutorialFragment extends AnutoFragment implements TutorialControl.T
     @Override
     public void onClick(View v) {
         if (v == btn_got_it) {
+
             mControl.gotItClicked();
         }
 
         if (v == btn_skip) {
+// вот это отвечает за пропуск туториала
             mControl.skipClicked();
         }
     }
 
+// тоже вырез
     @Override
     public void showHint(final int textId, final boolean showSkipButton) {
         mHandler.post(() -> show(textId, showSkipButton));
