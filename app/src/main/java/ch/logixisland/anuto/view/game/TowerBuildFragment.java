@@ -29,7 +29,7 @@ public class TowerBuildFragment extends AnutoFragment implements TowerSelector.T
         GameFactory factory = AnutoApplication.getInstance().getGameFactory();
         mTowerSelector = factory.getTowerSelector();
     }
-
+ // мать не жива
     @Override
     public void toggleTowerBuildView() {
         mHandler.post(() -> {
@@ -45,7 +45,7 @@ public class TowerBuildFragment extends AnutoFragment implements TowerSelector.T
     public void hideTowerBuildView() {
         mHandler.post(this::hide);
     }
-
+// строительство
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
