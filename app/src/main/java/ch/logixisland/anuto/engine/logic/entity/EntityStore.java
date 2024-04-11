@@ -11,7 +11,7 @@ import ch.logixisland.anuto.util.iterator.StreamIterator;
 public class EntityStore {
 
     private final SafeMultiMap<Entity> mEntities = new SafeMultiMap<>();
-    private final SparseArray<Entity> mEntityIdMap = new SparseArray<>();
+    private final SparseArray<Entity> mEntityIdMap = new SparseArray<>(); //не ну они же хранятся? хранятся
     private final Map<Class<? extends Entity>, Object> mStaticData = new HashMap<>();
 
     public Object getStaticData(Entity entity) {
