@@ -20,6 +20,7 @@ public class EntityRegistry implements Persister {
         private final EntityFactory mFactory;
         private final EntityPersister mPersister;
 
+//решать энтити через госуслуги
         public Registration(int type, String name, EntityFactory factory, EntityPersister persister) {
             mType = type;
             mName = name;
@@ -34,7 +35,7 @@ public class EntityRegistry implements Persister {
     private int mNextEntityId;
 
     public EntityRegistry(GameEngine gameEngine) {
-        mGameEngine = gameEngine;
+        mGameEngine = gameEngine; //да ну нахуй
     }
 
     public void registerEntity(EntityFactory factory, EntityPersister persister) {
@@ -72,7 +73,7 @@ public class EntityRegistry implements Persister {
     public void resetState() {
         mNextEntityId = 1;
     }
-
+//читальная
     @Override
     public void readState(KeyValueStore gameState) {
         mNextEntityId = gameState.getInt("nextEntityId");
@@ -86,7 +87,7 @@ public class EntityRegistry implements Persister {
             mGameEngine.add(entity);
         }
     }
-
+//писальная (не писать) 
     @Override
     public void writeState(KeyValueStore gameState) {
         gameState.putInt("nextEntityId", mNextEntityId);
