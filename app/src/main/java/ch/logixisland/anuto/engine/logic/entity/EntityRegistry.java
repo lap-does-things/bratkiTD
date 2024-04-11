@@ -10,6 +10,8 @@ import ch.logixisland.anuto.engine.logic.persistence.Persister;
 import ch.logixisland.anuto.util.container.KeyValueStore;
 import ch.logixisland.anuto.util.iterator.StreamIterator;
 
+
+//тут происходит ебаная магия. я честно мало понимаю как я заставил это работать, но это база энтитей!! 
 public class EntityRegistry implements Persister {
 
     private static class Registration {
