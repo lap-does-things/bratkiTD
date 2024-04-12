@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import ch.logixisland.anuto.AnutoApplication;
 import ch.logixisland.anuto.GameFactory;

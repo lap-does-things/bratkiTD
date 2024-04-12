@@ -83,7 +83,7 @@ public class GameFactory {
 
 
     public GameFactory(Context context) {
-        PreferenceManager.setDefaultValues(context, R.xml.settings, false);
+        PreferenceManager.setDefaultValues(context, ch.logixisland.anuto.R.xml.settings, false);
 
         initializeEngine(context);
         registerEntities();

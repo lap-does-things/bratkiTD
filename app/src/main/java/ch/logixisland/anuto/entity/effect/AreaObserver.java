@@ -2,8 +2,6 @@ package ch.logixisland.anuto.entity.effect;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import ch.logixisland.anuto.engine.logic.GameEngine;
 import ch.logixisland.anuto.engine.logic.entity.Entity;

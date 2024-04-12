@@ -1,7 +1,6 @@
 package ch.logixisland.anuto.entity.enemy;
 
 import android.graphics.Canvas;
-
 import ch.logixisland.anuto.R;
 import ch.logixisland.anuto.engine.logic.GameEngine;
 import ch.logixisland.anuto.engine.logic.entity.Entity;

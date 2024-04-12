@@ -2,7 +2,6 @@ package ch.logixisland.anuto.entity.enemy;
 
 import android.graphics.Canvas;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 

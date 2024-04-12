@@ -11,15 +11,15 @@ import ch.logixisland.anuto.business.wave.WaveManager;
 import ch.logixisland.anuto.engine.logic.GameEngine;
 import ch.logixisland.anuto.engine.logic.loop.TickTimer;
 import ch.logixisland.anuto.engine.logic.map.MapPath;
-import ch.logixisland.anuto.entity.EntityTypes;
-import ch.logixisland.anuto.entity.plateau.Plateau;
-import ch.logixisland.anuto.entity.tower.Tower;
-import ch.logixisland.anuto.entity.tower.TowerStrategy;
-import ch.logixisland.anuto.util.iterator.Function;
-import ch.logixisland.anuto.util.iterator.StreamIterator;
-import ch.logixisland.anuto.util.math.Intersections;
-import ch.logixisland.anuto.util.math.Line;
-import ch.logixisland.anuto.util.math.Vector2;
+import ch.bratki.anuto.entity.EntityTypes;
+import ch.bratki.anuto.entity.plateau.Plateau;
+import ch.bratki.anuto.entity.tower.Tower;
+import ch.bratki.anuto.entity.tower.TowerStrategy;
+import ch.bratki.anuto.util.iterator.Function;
+import ch.bratki.anuto.util.iterator.StreamIterator;
+import ch.bratki.anuto.util.math.Intersections;
+import ch.bratki.anuto.util.math.Line;
+import ch.bratki.anuto.util.math.Vector2;
 
 public class DefaultGameSimulator extends GameSimulator {
 
