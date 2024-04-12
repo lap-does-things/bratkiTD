@@ -38,7 +38,7 @@ public class GameOverFragment extends AnutoFragment implements GameState.Listene
 
         mHandler = new Handler();
 
-        // in case it is already game over on initialization
+
         updateScore();
 
         return v;

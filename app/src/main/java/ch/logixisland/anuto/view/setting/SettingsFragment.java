@@ -47,7 +47,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         //registerListPreference(Preferences.BACK_BUTTON_MODE);
         registerListPreference(Preferences.THEME_INDEX);
         setupChangeThemeConfirmationDialog();
-        setupResetHighscores();
+        //setupResetHighscores();
 
     }
 
@@ -97,35 +97,5 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         });
     }
 
-    private void setupResetHighscores() {
-        Preference preference = findPreference(PREF_RESET_HIGHSCORES);
-        preference.setOnPreferenceClickListener(preference1 -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(preference1.getContext());
-            builder.setTitle(R.string.reset_highscores)
-                    .setMessage(R.string.reset_highscores_warning)
-                    .setPositiveButton(android.R.string.yes, (dialog, which) -> mHighScores.clearHighScores())
-                    .setNegativeButton(android.R.string.no, null)
-                    //.setIcon(R.drawable.alert)
-                    .show();
-            return true;
-        });
-    }
-
-   // private void setupResetTutorial() {
-   //     Preference preference = findPreference(PREF_START_TUTORIAL);
-   //     preference.setOnPreferenceClickListener(preference1 -> {
-   //         AlertDialog.Builder builder = new AlertDialog.Builder(preference1.getContext());
-   //         builder.setTitle(R.string.start_tutorial)
-   //                 .setMessage(R.string.start_tutorial_warning)
-//.setPositiveButton(android.R.string.yes, (dialog, which) -> {
-//
-     //                   mGameLoader.restart();
-     //                   getActivity().finish();
-      //              })
-   //                 .setNegativeButton(android.R.string.no, null)
-      //              .setIcon(R.drawable.alert)
-    //                .show();
-    //        return true;
-   //     });
- //   }
 }
+

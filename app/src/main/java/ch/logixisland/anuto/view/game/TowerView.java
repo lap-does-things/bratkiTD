@@ -55,7 +55,7 @@ public class TowerView extends View {
         mPreviewTower = tower;
         postInvalidate();
     }
-// смотрим тавер
+
     public int getTowerValue() {
         if (mPreviewTower == null) {
             return 0;
@@ -68,7 +68,7 @@ public class TowerView extends View {
         return mPreviewTower.getEntityName();
     }
 
-// размер больше меньше
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
@@ -86,7 +86,7 @@ public class TowerView extends View {
         mScreenMatrix.postScale(1f, -1f);
         mScreenMatrix.postTranslate(0, h);
     }
-//рисуем тавер
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

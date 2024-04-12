@@ -14,7 +14,7 @@ public class GameLoop implements Runnable {
     private final static String TAG = GameLoop.class.getSimpleName();
 
     public final static int TARGET_FRAME_RATE = 30;
-    private final static int TICK_TIME = 1000 / TARGET_FRAME_RATE; //чтобы игра не бежала вперёд и было понятно что происходит
+    private final static int TICK_TIME = 1000 / TARGET_FRAME_RATE;
     private final static int MAX_FRAME_SKIPS = 1;
 
     private final Renderer mRenderer;
@@ -62,19 +62,19 @@ public class GameLoop implements Runnable {
             Log.i(TAG, "Плохое решение...");
             mRunning = true;
             mGameThread = new Thread(this);
-            mGameThread.start(); //дальше Бога нет. 
+            mGameThread.start();
         }
     }
 
     public void stop() {
         if (mRunning) {
-            Log.i(TAG, "Вырубай нахуй");
+            Log.i(TAG, "Страшно вырубай!");
             mRunning = false;
 
             try {
                 mGameThread.join();
             } catch (InterruptedException e) {
-                throw new RuntimeException("Оно неостановимо!", e); //оно неостановимо
+                throw new RuntimeException("Оно неостановимо!", e);
             }
         }
     }
@@ -110,19 +110,19 @@ public class GameLoop implements Runnable {
                 if (sleepTime > 0) {
                     Thread.sleep(sleepTime);
                 } else {
-                    timeNextTick = System.currentTimeMillis(); // resync
+                    timeNextTick = System.currentTimeMillis();
                 }
 
                 loopCount++;
             }
 
-            // process messages в последнюю очередь. уже похер так как сохранений не будет
+
             mMessageQueue.processMessages();
 
         } catch (Exception e) {
             mRunning = false;
             notifyErrorListeners(loopCount, e);
-            throw new RuntimeException("ВСЕ СЛОМАЛОСЬ ЮРА ", e);
+            throw new RuntimeException("ВСЕ СЛОМАЛОСЬ ЮРА", e);
         }
     }
 

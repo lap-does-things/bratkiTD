@@ -7,10 +7,6 @@
     <string name="next_wave">Следующая</string>
 
     <string name="restart">Рестарт</string>
-    <string name="save_game">Сохранить</string>
-    <string name="game_saved">Сохранено!</string>
-    <string name="load_game">Загрузить</string>
-    <string name="change_map">Сменить карту</string>
     <string name="theme">Тема</string>
     <string name="settings">Настройки</string>
     <string name="delete">Удалить</string>
@@ -18,11 +14,6 @@
 
     <string name="change_theme">Сменить тему</string>
     <string name="change_theme_warning">Игра перезапустится</string>
-    <string name="back_button_mode">Закрытие кнопкой Назад</string>
-    <string name="reset_highscores">Сбросить рекорды</string>
-    <string name="reset_highscores_warning">Точно?</string>
-    <string name="start_tutorial">нахуй иди</string>
-    <string name="start_tutorial_warning">нахуй иди</string>
     <string name="transparent_menus">Прозрачные меню</string>
     <string name="game_over">Игра окончена!</string>
     <string name="score">Очки</string>

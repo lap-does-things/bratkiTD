@@ -9,10 +9,6 @@
     <string name="fast_forward" translatable="false">\>\></string>
 
     <string name="restart">Рестарт</string>
-    <string name="save_game">Сохранить</string>
-    <string name="game_saved">Сохранено!</string>
-    <string name="load_game">Загрузить</string>
-    <string name="change_map">Сменить карту</string>
     <string name="settings">Настройки</string>
 
     <string name="delete">Удалить</string>
@@ -21,11 +17,6 @@
     <string name="theme">Тема</string>
     <string name="change_theme">Сменить тему</string>
     <string name="change_theme_warning">Игра перезапустится</string>
-    <string name="back_button_mode">Закрытие кнопкой Назад</string>
-    <string name="reset_highscores">Сбросить рекорды</string>
-    <string name="reset_highscores_warning">Точно?</string>
-    <string name="start_tutorial">нахуй иди</string>
-    <string name="start_tutorial_warning">нахуй иди</string>
     <string name="transparent_menus">Прозрачные меню</string>
 
     <string name="game_over">Игра окончена!</string>
@@ -66,35 +57,6 @@
     <string name="theme_original">Оригинальная</string>
     <string name="theme_dark">Тёмная</string>
     <string name="theme_colour">Цветная</string>
-
-    <string name="map_original_name">The Original</string>
-    <string name="map_waiting_line_name">I hate waiting lines</string>
-    <string name="map_turn_round_name">Turn a round</string>
-    <string name="map_hurry_name">We\'re in a hurry!</string>
-    <string name="map_civyshk_2y_name">Civyshk 2Y</string>
-    <string name="map_civyshk_line5_name">Civyshk Line5</string>
-    <string name="map_civyshk_labyrinth_name">Civyshk Labyrinth</string>
-    <string name="map_civyshk_yard_name">Civyshk Yard</string>
-    <string name="map_higgledy_piggledy_name">Higgledy Piggledy</string>
-    <string name="map_big_u_name">Big U</string>
-    <string name="map_cloverleaf_name">Cloverleaf</string>
-    <string name="map_roundabout_name">Roundabout</string>
-    <string name="map_runway_name">Runway</string>
-    <string name="map_wtf_name">WTF?</string>
-    <string name="map_turn_left_name">Turn Left</string>
-    <string name="map_turn_right_name">Turn Right</string>
-    <string name="map_oddball_name">Oddball</string>
-    <string name="map_spiral1_name">Spiral v1</string>
-    <string name="map_chaos_name">Chaos</string>
-    <string name="map_moar_chaos_name">Moar Chaos</string>
-    <string name="map_spiral2_name">Spiral v2</string>
-    <string name="map_nou_name">No, U</string>
-    <string name="map_highscore_name">Highscore!</string>
-    <string name="press_back_button_again_toast">Press back button again to exit</string>
-
-    <string name="tutorial">Getting Started</string>
-    <string name="got_it">Got It!</string>
-    <string name="skip_tutorial">Skip Tutorial</string>
 
     <string name="enemy_stats">Враги</string>
     <string name="name">"Имя : "</string>

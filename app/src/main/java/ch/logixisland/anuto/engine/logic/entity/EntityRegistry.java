@@ -11,7 +11,7 @@ import ch.logixisland.anuto.util.container.KeyValueStore;
 import ch.logixisland.anuto.util.iterator.StreamIterator;
 
 
-//тут происходит ебаная магия. я честно мало понимаю как я заставил это работать, но это база энтитей!! 
+
 public class EntityRegistry implements Persister {
 
     private static class Registration {
@@ -20,7 +20,7 @@ public class EntityRegistry implements Persister {
         private final EntityFactory mFactory;
         private final EntityPersister mPersister;
 
-//решать энтити через госуслуги
+
         public Registration(int type, String name, EntityFactory factory, EntityPersister persister) {
             mType = type;
             mName = name;
@@ -73,7 +73,7 @@ public class EntityRegistry implements Persister {
     public void resetState() {
         mNextEntityId = 1;
     }
-//читальная
+
     @Override
     public void readState(KeyValueStore gameState) {
         mNextEntityId = gameState.getInt("nextEntityId");
@@ -87,7 +87,7 @@ public class EntityRegistry implements Persister {
             mGameEngine.add(entity);
         }
     }
-//писальная (не писать) 
+
     @Override
     public void writeState(KeyValueStore gameState) {
         gameState.putInt("nextEntityId", mNextEntityId);

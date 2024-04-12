@@ -32,30 +32,18 @@ public class BackButtonControl {
 
     public BackButtonAction backButtonPressed() {
         long timeNow = System.currentTimeMillis();
+        return BackButtonAction.EXIT;
 
-        switch (getBackButtonMode()) {
-            case ENABLED:
-                return BackButtonAction.EXIT;
-
-            case TWICE:
-                if (timeNow < mLastBackButtonPress + BACK_TWICE_INTERVAL) {
-                    return BackButtonAction.EXIT;
-                }
-                mLastBackButtonPress = timeNow;
-                return BackButtonAction.SHOW_TOAST;
-
-            default:
-                return BackButtonAction.DO_NOTHING;
-        }
     }
 
-    private BackButtonMode getBackButtonMode() {
-        String backModeString = mPreferences.getString(Preferences.BACK_BUTTON_MODE, null);
+   // private BackButtonMode getBackButtonMode() {
+     //   String backModeString = mPreferences.getString(Preferences.BACK_BUTTON_MODE, null);
+//
+     //   try {
+     //       return BackButtonMode.valueOf(backModeString);
+     //   } catch (Exception e) {
+     //       return BackButtonMode.DISABLED;
+    //    }
 
-        try {
-            return BackButtonMode.valueOf(backModeString);
-        } catch (Exception e) {
-            return BackButtonMode.DISABLED;
         }
-    }
-}
+

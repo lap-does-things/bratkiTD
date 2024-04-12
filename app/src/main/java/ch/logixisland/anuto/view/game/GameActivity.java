@@ -41,13 +41,13 @@ public class GameActivity extends AnutoActivity {
         return ActivityType.Game;
     }
 
-//МЫ ТРАХАЕМ ИЛИ КАК???? 
+    //МЫ ТРАХАЕМ ИЛИ КАК????
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mGameLoader.autoLoadGame();
 
         super.onCreate(savedInstanceState);
-//этот вью можно контрооить через view 
+//этот вью можно контрооить через view
         setContentView(R.layout.activity_game);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -77,7 +77,7 @@ public class GameActivity extends AnutoActivity {
         }
     }
 
-//выбирать тавера
+    //выбирать тавера
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -89,7 +89,7 @@ public class GameActivity extends AnutoActivity {
                 case DO_NOTHING:
                     return true;
                 case SHOW_TOAST:
-                    mBackButtonToast = showBackButtonToast();
+                  //  mBackButtonToast = showBackButtonToast();
                     return true;
                 default:
                     return super.onKeyDown(keyCode, event);
@@ -99,10 +99,10 @@ public class GameActivity extends AnutoActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private Toast showBackButtonToast() {
-        String message = getString(R.string.press_back_button_again_toast);
-        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-        toast.show();
-        return toast;
-    }
+   // private Toast showBackButtonToast() {
+        //String message = getString(R.string.press_back_button_again_toast);
+        //Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        //toast.show();
+       // return toast;
+    //}
 }

@@ -22,7 +22,7 @@ public class FrameRateLogger {
     public void incrementRenderCount() {
         mRenderCount.incrementAndGet();
     }
-// фэпээсы мои фэпээсы 144 фпс в БраткиТД с РТХ!!! 
+
     public void outputFrameRate() {
         long currentTime = System.currentTimeMillis();
         long sinceLastOutput = currentTime - mLastOutputTime;

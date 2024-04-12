@@ -17,7 +17,4 @@
         android:key="transparent_menus_enabled"
         android:defaultValue="false"
         android:title="@string/transparent_menus" />
-    <Preference
-        android:key="reset_highscores"
-        android:title="@string/reset_highscores" />
 </PreferenceScreen>

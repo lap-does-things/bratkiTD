@@ -28,12 +28,12 @@ public abstract class Entity {
             Vector2 toObj = Vector2.to(p1, entity.mPosition);
             Vector2 proj = toObj.proj(line);
 
-            // моментик если объект после конца лайна
+
             if (proj.len() > line.len()) {
                 return false;
             }
 
-            // или перед
+
             if (!MathUtils.equals(proj.angle(), line.angle(), 1f)) {
                 return false;
             }
@@ -125,8 +125,7 @@ public abstract class Entity {
         mPosition = position;
     }
 
-    // оверрайдит offset 
-// похуй потом
+
     public void move(Vector2 offset) {
         mPosition = offset.add(mPosition);
     }

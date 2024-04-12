@@ -34,9 +34,7 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
     private View menu_layout;
 
     private Button btn_restart;
-    //private Button btn_change_map;
-   // private Button btn_save_game;
-   // private Button btn_load_game;
+
     private Button btn_enemy_stats;
     private Button btn_settings;
 
@@ -58,9 +56,7 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         setContentView(R.layout.activity_menu);
 // Кнопки создаём
         btn_restart = findViewById(R.id.btn_restart);
-        //btn_change_map = findViewById(R.id.btn_change_map);
-      //  btn_save_game = findViewById(R.id.btn_save_game);
-      //  btn_load_game = findViewById(R.id.btn_load_game);
+
         btn_enemy_stats = findViewById(R.id.btn_enemy_stats);
         btn_settings = findViewById(R.id.btn_settings);
 
@@ -68,14 +64,10 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
         menu_layout = findViewById(R.id.menu_layout);
 
         btn_restart.setOnClickListener(this);
-        //btn_change_map.setOnClickListener(this);
-       // btn_save_game.setOnClickListener(this);
-       // btn_load_game.setOnClickListener(this);
+
         btn_enemy_stats.setOnClickListener(this);
         btn_settings.setOnClickListener(this);
- 
-// сохранение       btn_save_game.setEnabled(mGameState.isGameStarted());
-        //btn_load_game.setEnabled(!mSaveGameRepository.getSaveGameInfos().isEmpty());
+
 
         activity_menu.setOnTouchListener(this);
         menu_layout.setOnTouchListener(this);
@@ -89,24 +81,6 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
             return;
         }
 
-        //if (view == btn_change_map) {
-        //    Intent intent = new Intent(this, ChangeMapActivity.class);
-        //    startActivityForResult(intent, REQUEST_CHANGE_MAP);
-        //    return;
-        //}
-
-      //  if (view == btn_save_game) {
-       //     mGameSaver.saveGame();
-       //     btn_load_game.setEnabled(true);
-        //     Toast.makeText(this, getString(R.string.game_saved), Toast.LENGTH_SHORT).show();
-       //     return;
-       // }
-
-       // if (view == btn_load_game) {
-      //      Intent intent = new Intent(this, LoadGameActivity.class);
-      //      startActivityForResult(intent, REQUEST_LOADMENU);
-      //      return;
-      //  }
 
         if (view == btn_enemy_stats) {
             Intent intent = new Intent(this, EnemyStatsActivity.class);
@@ -139,9 +113,7 @@ public class MenuActivity extends AnutoActivity implements View.OnClickListener,
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CHANGE_MAP) {
-            finish();
-        }
+
 
         if (requestCode == REQUEST_LOADMENU) {
             finish();

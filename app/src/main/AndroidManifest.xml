@@ -38,13 +38,7 @@
             android:theme="@android:style/Theme.DeviceDefault">
             <!-- android:icon="@drawable/settings" -->
      </activity>
-     <activity
-         android:name=".view.load.LoadGameActivity"
-         android:label="@string/load_game"
 
-         android:theme="@android:style/Theme.DeviceDefault">
-         <!--android:icon="@drawable/settings"-->
-     </activity>
      <activity
          android:name=".view.stats.EnemyStatsActivity"
          android:label="@string/enemy_stats"
