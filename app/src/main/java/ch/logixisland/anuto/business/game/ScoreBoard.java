@@ -17,7 +17,7 @@ public class ScoreBoard implements Persister {
 
         void livesChanged(int lives);
     }
-
+// обработка верхней панельки?? 
     private final GameEngine mGameEngine;
 
     private int mCredits;
@@ -27,11 +27,11 @@ public class ScoreBoard implements Persister {
     private int mWaveBonus;
 
     private final List<Listener> mListeners = new CopyOnWriteArrayList<>();
-
+//подрубаем игру
     public ScoreBoard(GameEngine gameEngine) {
         mGameEngine = gameEngine;
     }
-
+//ленивые функции начинают отрабатывать себя
     public void takeLives(final int lives) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> takeLives(lives));
@@ -41,7 +41,7 @@ public class ScoreBoard implements Persister {
         mLives -= lives;
         livesChanged();
     }
-
+// дать деньги и обновить
     public void giveCredits(final int credits, final boolean earned) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> giveCredits(credits, earned));
@@ -66,7 +66,7 @@ public class ScoreBoard implements Persister {
         mCredits -= credits;
         creditsChanged();
     }
-
+// бонус ставит
     public void setEarlyBonus(final int earlyBonus) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> setEarlyBonus(earlyBonus));
@@ -86,7 +86,7 @@ public class ScoreBoard implements Persister {
         mWaveBonus = waveBonus;
         bonusChanged();
     }
-
+// ну и опять ленивые функции
     public int getCredits() {
         return mCredits;
     }
@@ -136,7 +136,7 @@ public class ScoreBoard implements Persister {
             listener.livesChanged(mLives);
         }
     }
-
+// рестарт
     @Override
     public void resetState() {
         mLives = GameSettings.START_LIVES;
@@ -146,7 +146,7 @@ public class ScoreBoard implements Persister {
         creditsChanged();
         livesChanged();
     }
-
+// изменение состояния денег хп
     @Override
     public void writeState(KeyValueStore gameState) {
         gameState.putInt("lives", mLives);
