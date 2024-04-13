@@ -11,7 +11,7 @@ public class HighScores {
     private final ScoreBoard mScoreBoard;
     private final GameEngine mGameEngine;
     private final GameLoader mGameLoader;
-
+// то же, что и сейвы, только с рекордами. в игру не имплементировано, но по сути сохраняет. 
     public HighScores(Context context, GameEngine gameEngine, ScoreBoard scoreBoard, GameLoader gameLoader) {
         mHighScores = context.getSharedPreferences("high_scores", Context.MODE_PRIVATE);
         mScoreBoard = scoreBoard;
