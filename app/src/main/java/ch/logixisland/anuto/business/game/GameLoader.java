@@ -20,7 +20,7 @@ import ch.logixisland.anuto.engine.logic.persistence.GamePersister;
 import ch.logixisland.anuto.engine.render.Viewport;
 import ch.logixisland.anuto.entity.plateau.Plateau;
 import ch.logixisland.anuto.util.container.KeyValueStore;
-
+// обрабатывает загрузку игры
 public class GameLoader implements ErrorListener {
 
     private static final String TAG = GameLoader.class.getSimpleName();
@@ -28,7 +28,7 @@ public class GameLoader implements ErrorListener {
     public interface Listener {
         void gameLoaded();
     }
-
+// всё что нужно знать для игры
     private final Context mContext;
     private final GameEngine mGameEngine;
     private final GamePersister mGamePersister;
@@ -44,14 +44,14 @@ public class GameLoader implements ErrorListener {
     public GameLoader(Context context, GameEngine gameEngine, GamePersister gamePersister,
                       Viewport viewport, EntityRegistry entityRegistry, MapRepository mapRepository,
                       SaveGameRepository saveGameRepository) {
-        mContext = context;
+        mContext = context; // вбиваем эти значения в заранее созданный СГР
         mGameEngine = gameEngine;
         mGamePersister = gamePersister;
         mViewport = viewport;
         mEntityRegistry = entityRegistry;
         mMapRepository = mapRepository;
         mSaveGameRepository = saveGameRepository;
-
+// и если ошибки, то есть для этого лисенер
         mGameEngine.registerErrorListener(this);
     }
 
@@ -64,9 +64,9 @@ public class GameLoader implements ErrorListener {
     }
 
     public String getCurrentMapId() {
-        return mCurrentMapId;
+        return mCurrentMapId; //утилити функции для вывода информации
     }
-
+ // рестарт
     public void restart() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::restart);
@@ -79,7 +79,7 @@ public class GameLoader implements ErrorListener {
 
         loadMap(mCurrentMapId);
     }
-
+// используется когда игра заново разворачивается
     public void autoLoadGame() {
         File autoSaveStateFile = mSaveGameRepository.getAutoSaveStateFile();
 
@@ -90,7 +90,7 @@ public class GameLoader implements ErrorListener {
             loadMap(mMapRepository.getDefaultMapId());
         }
     }
-
+// ручная загрузка игры. не имплементирована в меню КХМ КХМ ЮРА
     public void loadGame(final File stateFile) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> loadGame(stateFile));
@@ -127,7 +127,7 @@ public class GameLoader implements ErrorListener {
         mCurrentMapId = mapId;
         initializeGame(mCurrentMapId, null);
     }
-
+//Начало игры
     private void initializeGame(String mapId, KeyValueStore gameState) {
         Log.d(TAG, "Initializing game...");
         mGameEngine.clear();
@@ -142,7 +142,7 @@ public class GameLoader implements ErrorListener {
             waveInfos.add(new WaveInfo(data));
         }
         mGameEngine.setWaveInfos(waveInfos);
-
+// размер окна
         mViewport.setGameSize(map.getWidth(), map.getHeight());
 
         if (gameState != null) {
@@ -158,7 +158,7 @@ public class GameLoader implements ErrorListener {
 
         Log.d(TAG, "Game loaded.");
     }
-
+// карта грузится
     private void initializeMap(GameMap map) {
         for (PlateauInfo info : map.getPlateaus()) {
             Plateau plateau = (Plateau) mEntityRegistry.createEntity(info.getName());
@@ -169,7 +169,7 @@ public class GameLoader implements ErrorListener {
 
     @Override
     public void error(Exception e, int loopCount) {
-        // avoid game not starting anymore because of a somehow corrupt saved game file
+        // чтобы игра не крашилась если что сразу после загрузки
         if (loopCount < 10) {
             Log.w(TAG, "Game crashed just after loading, deleting saved game file.");
 
