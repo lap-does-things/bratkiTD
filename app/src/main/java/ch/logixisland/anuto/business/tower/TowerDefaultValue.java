@@ -15,7 +15,7 @@ public class TowerDefaultValue {
         mEntityRegistry = entityRegistry;
         mTowerDefaultValue = new HashMap<>();
     }
-
+// получаем начальную ценность тавера
     public int getDefaultValue(String name) {
         if (!mTowerDefaultValue.containsKey(name)) {
             Tower tower = (Tower) mEntityRegistry.createEntity(name);
