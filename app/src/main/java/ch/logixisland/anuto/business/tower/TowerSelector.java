@@ -27,7 +27,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
     public interface Listener {
         void towerInfoShown();
     }
-
+// ОПЯЯЯЯТЬ всё объявляем. 
     private final GameEngine mGameEngine;
     private final ScoreBoard mScoreBoard;
 
@@ -39,13 +39,13 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
     private Tower mSelectedTower;
 
     private Collection<Listener> mListeners = new CopyOnWriteArrayList<>();
-
+// нужно для выбора тавера
     public TowerSelector(GameEngine gameEngine, ScoreBoard scoreBoard) {
         mGameEngine = gameEngine;
         mScoreBoard = scoreBoard;
         mScoreBoard.addListener(this);
     }
-
+// чтобы была инфа и кнопки действий
     public void setTowerInfoView(TowerInfoView view) {
         mTowerInfoView = view;
     }
@@ -61,7 +61,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
     public void removeListener(Listener listener) {
         mListeners.remove(listener);
     }
-
+// если выбрано, то выбрано
     public boolean isTowerSelected() {
         return mSelectedTower != null;
     }
@@ -82,7 +82,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
             mTowerBuildView.toggleTowerBuildView();
         }
     }
-
+// выбирает нужный тавер на позиции
     public void selectTowerAt(Vector2 position) {
         if (mGameEngine.isThreadChangeNeeded()) {
             final Vector2 finalPosition = position;
@@ -100,7 +100,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
             selectTower(null);
         }
     }
-
+// сам выбор и показание
     public void selectTower(Tower tower) {
         if (mGameEngine.isThreadChangeNeeded()) {
             final Tower finalTower = tower;
@@ -121,7 +121,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
             setSelectedTower(null);
         }
     }
-
+// чтобы это можно было делать
     public void setControlsEnabled(final boolean enabled) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> setControlsEnabled(enabled));
@@ -134,7 +134,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
             updateTowerInfo();
         }
     }
-
+// показывает статы
     void showTowerInfo(Tower tower) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::showTowerInfoView);
@@ -155,7 +155,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
             showTowerInfoView();
         }
     }
-
+// и обновляет статы дамага нанесеного и тд
     @Override
     public void entityRemoved(Entity entity) {
         selectTower(null);
@@ -181,8 +181,7 @@ public class TowerSelector implements ScoreBoard.Listener, Entity.Listener, Towe
     @Override
     public void bonusChanged(int waveBonus, int earlyBonus) {
 
-    }
-
+    }// чтобы ничего нмешало выбирать
     @Override
     public void livesChanged(int lives) {
 
