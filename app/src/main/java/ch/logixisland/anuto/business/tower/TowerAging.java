@@ -18,7 +18,7 @@ public class TowerAging {
 // собственно оно самое
     public void ageTowers() {
         if (mGameEngine.isThreadChangeNeeded()) {
-            mGameEngine.post(this::ageTowers);
+            mGameEngine.post(this::ageTowers); // ВАЖНО!!! ЮРА!!! Каждый раз, когда ты видишь это в коде, это значит ровным счётом ничего. Ты просто перекидываешь таску ядра, пока ему нужна замена. 
             return;
         }
 
