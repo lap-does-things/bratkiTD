@@ -8,7 +8,7 @@ import ch.logixisland.anuto.entity.tower.TowerInfoValue;
 import ch.logixisland.anuto.entity.tower.TowerStrategy;
 
 public class TowerInfo {
-
+ // общие для всех таверов статы
     private int mValue;
     private int mLevel;
     private int mLevelMax;
@@ -22,7 +22,7 @@ public class TowerInfo {
     private boolean mHasStrategy;
     private TowerStrategy mStrategy;
     private List<TowerInfoValue> mProperties;
-
+// получаем их всех
     public TowerInfo(Tower tower, int credits, boolean controlsEnabled) {
         mValue = tower.getValue();
         mLevel = tower.getLevel();
@@ -32,9 +32,9 @@ public class TowerInfo {
         mUpgradeCost = tower.getUpgradeCost();
         mUpgradeable = tower.isUpgradeable() && mUpgradeCost <= credits && controlsEnabled;
         mSellable = controlsEnabled;
-
+// и наводчик для них
         Aimer aimer = tower.getAimer();
-
+// есть ли он или нет даёт нам понять должны ли быть активны кнопки и тд
         if (aimer != null) {
             mCanLockTarget = true;
             mDoesLockTarget = aimer.doesLockTarget();
@@ -47,7 +47,7 @@ public class TowerInfo {
 
         mProperties = tower.getTowerInfoValues();
     }
-
+// и ленивые функции на возврат 
     public int getValue() {
         return mValue;
     }
