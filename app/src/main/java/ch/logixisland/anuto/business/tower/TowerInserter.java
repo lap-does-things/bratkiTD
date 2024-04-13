@@ -19,7 +19,7 @@ public class TowerInserter {
     public interface Listener {
         void towerInserted();
     }
-
+// получаем всю игру. 
     private final GameEngine mGameEngine;
     private final GameState mGameState;
     private final EntityRegistry mEntityRegistry;
@@ -41,16 +41,16 @@ public class TowerInserter {
         mTowerSelector = towerSelector;
         mTowerAging = towerAging;
         mScoreBoard = scoreBoard;
-
+// подставляем для всей игры
         mTowerDefaultValue = new TowerDefaultValue(entityRegistry);
     }
-
+// и вставляем тавер
     public void insertTower(final String towerName) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> insertTower(towerName));
             return;
         }
-
+// желательно если игра ещё идёт и если тавер выбран
         if (mInsertedTower == null && !mGameState.isGameOver() &&
                 mScoreBoard.getCredits() >= mTowerDefaultValue.getDefaultValue(towerName)) {
             showTowerLevels();
@@ -63,7 +63,7 @@ public class TowerInserter {
             mGameEngine.post(() -> setPosition(position));
             return;
         }
-
+// и желательно туда где не занято и не дорога
         if (mInsertedTower != null) {
             Plateau closestPlateau = mGameEngine.getEntitiesByType(EntityTypes.PLATEAU)
                     .cast(Plateau.class)
@@ -77,13 +77,13 @@ public class TowerInserter {
                 }
 
                 mCurrentPlateau = closestPlateau;
-                mInsertedTower.setPosition(mCurrentPlateau.getPosition());
+   // и вот ставим           mInsertedTower.setPosition(mCurrentPlateau.getPosition());
             } else {
                 cancel();
             }
         }
     }
-
+// покупаем тавер
     public void buyTower() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::buyTower);
@@ -94,7 +94,7 @@ public class TowerInserter {
             mInsertedTower.setPlateau(mCurrentPlateau);
             mInsertedTower.setBuilt();
 
-            mScoreBoard.takeCredits(mInsertedTower.getValue());
+  // за это забирают деньги, прикиньте     mScoreBoard.takeCredits(mInsertedTower.getValue());
             mTowerAging.ageTower(mInsertedTower);
 
             mTowerSelector.selectTower(null);
@@ -108,7 +108,7 @@ public class TowerInserter {
             }
         }
     }
-
+// отмена если что&то не так
     public void cancel() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::cancel);
@@ -131,7 +131,7 @@ public class TowerInserter {
     public void removeListener(Listener listener) {
         mListeners.remove(listener);
     }
-
+// когда строишь показывает лвла таверов
     private void showTowerLevels() {
         Iterator<Tower> towers = mGameEngine.getEntitiesByType(EntityTypes.TOWER).cast(Tower.class);
 
@@ -140,7 +140,7 @@ public class TowerInserter {
             tower.showLevel();
         }
     }
-
+// а потом прячет
     private void hideTowerLevels() {
         Iterator<Tower> towers = mGameEngine.getEntitiesByType(EntityTypes.TOWER).cast(Tower.class);
 
