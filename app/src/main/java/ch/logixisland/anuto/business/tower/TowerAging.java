@@ -6,7 +6,8 @@ import ch.logixisland.anuto.GameSettings;
 import ch.logixisland.anuto.engine.logic.GameEngine;
 import ch.logixisland.anuto.entity.EntityTypes;
 import ch.logixisland.anuto.entity.tower.Tower;
-
+// ДЛЯ ТУПЫХ!!!! 
+// Tower Aging - легендарная механика Братков ТД, которая не позволяет игрокам абузитт и продавать тавер за 100% потраченных на него денег. Значение меняется по ходу игры. 
 public class TowerAging {
 
     private final GameEngine mGameEngine;
@@ -14,7 +15,7 @@ public class TowerAging {
     public TowerAging(GameEngine gameEngine) {
         mGameEngine = gameEngine;
     }
-
+// собственно оно самое
     public void ageTowers() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::ageTowers);
@@ -30,7 +31,7 @@ public class TowerAging {
             ageTower(tower);
         }
     }
-
+// и изменение самой value 
     public void ageTower(final Tower tower) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> ageTower(tower));
