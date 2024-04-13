@@ -24,7 +24,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
     private int mFinalScore = 0;
 
     private List<Listener> mListeners = new CopyOnWriteArrayList<>();
-
+// сверху объявили, тут вставляем инфу о состоянии игры
     public GameState(ScoreBoard scoreBoard, HighScores highScores, TowerSelector towerSelector) {
         mScoreBoard = scoreBoard;
         mHighScores = highScores;
@@ -32,7 +32,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
 
         mScoreBoard.addListener(this);
     }
-
+// а теперь функции для получения инфы. ведь кому-то так сложно просто вписать переменную из return сразу вместо функции... 
     public boolean isGameOver() {
         return mGameOver;
     }
@@ -56,7 +56,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
     public void gameStarted() {
         mGameStarted = true;
     }
-
+// гейм овер условие
     @Override
     public void livesChanged(int lives) {
         if (!mGameOver && mScoreBoard.getLives() < 0) {
@@ -79,7 +79,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
         setGameOver(false);
         mGameStarted = false;
     }
-
+// очки пишем/читаем
     @Override
     public void writeState(KeyValueStore gameState) {
         gameState.putInt("finalScore", mFinalScore);
@@ -91,7 +91,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
         mGameStarted = gameState.getInt("waveNumber") > 0;
         mFinalScore = gameState.getInt("finalScore");
     }
-
+// запись рекорда и объявление самого геймовера
     private void setGameOver(boolean gameOver) {
         mGameOver = gameOver;
 
@@ -104,7 +104,7 @@ public class GameState implements ScoreBoard.Listener, Persister {
                 listener.gameOver();
             }
         }
-
+// и разрешаем управление когда не геймовер
         if (!gameOver) {
             mGameStarted = false;
             mFinalScore = 0;
