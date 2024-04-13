@@ -12,7 +12,7 @@ import ch.logixisland.anuto.entity.tower.Tower;
 import ch.logixisland.anuto.entity.tower.TowerStrategy;
 
 public class TowerControl {
-
+// опять объявляем всё нужное и подключаем
     private final GameEngine mGameEngine;
     private final ScoreBoard mScoreBoard;
     private final TowerSelector mTowerSelector;
@@ -25,23 +25,23 @@ public class TowerControl {
         mTowerSelector = towerSelector;
         mEntityRegistry = entityRegistry;
     }
-
+// апгрейд тавера
     public void upgradeTower() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::upgradeTower);
             return;
         }
-
+// если его можно апать
         Tower selectedTower = mTowerSelector.getSelectedTower();
         if (selectedTower == null || !selectedTower.isUpgradeable()) {
             return;
         }
-
+// ура опять использование бесмысленных функций
         int upgradeCost = selectedTower.getUpgradeCost();
         if (upgradeCost > mScoreBoard.getCredits()) {
             return;
         }
-
+// ну и получение апгрейда
         Tower upgradedTower = (Tower) mEntityRegistry.createEntity(selectedTower.getUpgradeName());
         mTowerSelector.showTowerInfo(upgradedTower);
         mScoreBoard.takeCredits(upgradeCost);
@@ -51,7 +51,7 @@ public class TowerControl {
         upgradedTower.setValue(selectedTower.getValue() + upgradeCost);
         upgradedTower.setBuilt();
         mGameEngine.add(upgradedTower);
-
+// и заменение наводки для него
         Aimer upgradedTowerAimer = upgradedTower.getAimer();
         Aimer selectedTowerAimer = selectedTower.getAimer();
         if (upgradedTowerAimer != null && selectedTowerAimer != null) {
@@ -59,7 +59,7 @@ public class TowerControl {
             upgradedTowerAimer.setStrategy(selectedTowerAimer.getStrategy());
         }
     }
-
+// улучшение тавера
     public void enhanceTower() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::enhanceTower);
@@ -69,13 +69,13 @@ public class TowerControl {
         Tower selectedTower = mTowerSelector.getSelectedTower();
         if (selectedTower != null && selectedTower.isEnhanceable()) {
             if (selectedTower.getEnhanceCost() <= mScoreBoard.getCredits()) {
-                mScoreBoard.takeCredits(selectedTower.getEnhanceCost());
+// суть та же, но не нужно новый еймер и т. д. объявлять  mScoreBoard.takeCredits(selectedTower.getEnhanceCost());
                 selectedTower.enhance();
                 mTowerSelector.updateTowerInfo();
             }
         }
     }
-
+// прокликивает поведения тавера
     public void cycleTowerStrategy() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::cycleTowerStrategy);
@@ -99,10 +99,10 @@ public class TowerControl {
             index = 0;
         }
 
-        selectedTowerAimer.setStrategy(values.get(index));
+ // устанавливаем поведение      selectedTowerAimer.setStrategy(values.get(index));
         mTowerSelector.updateTowerInfo();
     }
-
+// меняем захват врага
     public void toggleLockTarget() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::toggleLockTarget);
@@ -123,7 +123,7 @@ public class TowerControl {
         selectedTowerAimer.setLockTarget(!lock);
         mTowerSelector.updateTowerInfo();
     }
-
+// продаем тавер
     public void sellTower() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::sellTower);
