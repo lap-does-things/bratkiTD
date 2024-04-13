@@ -22,7 +22,7 @@ import ch.logixisland.anuto.util.container.KeyValueStore;
 public class SaveGameRepository {
 
     private static final String TAG = SaveGameRepository.class.getSimpleName();
-
+ // вот в таком виде сохраняются геймстейты
     private static final String AUTO_SAVE_STATE_FILE = "autosave.json";
 
     private static final String GAME_INFO_FILE = "info.json";
@@ -38,11 +38,11 @@ public class SaveGameRepository {
 
         readSaveGameInfos();
     }
-
+// получаем его
     public File getAutoSaveStateFile() {
         return new File(mContext.getFilesDir(), AUTO_SAVE_STATE_FILE);
     }
-
+// и получаем из сейва
     public File getGameStateFile(SaveGameInfo saveGameInfo) {
         return new File(saveGameInfo.getFolder(), GAME_STATE_FILE);
     }
@@ -50,7 +50,7 @@ public class SaveGameRepository {
     public List<SaveGameInfo> getSaveGameInfos() {
         return Collections.unmodifiableList(mSaveGameInfos);
     }
-
+// сейв со всей инфой и скриншотом
     public SaveGameInfo createSaveGame(Bitmap screenshot, int score, int wave, int lives) {
         Date date = new Date();
 
@@ -83,7 +83,7 @@ public class SaveGameRepository {
         } catch (IOException e) {
             throw new RuntimeException("Could not save screenshot!", e);
         }
-
+// ну и тут то же самое, что и в обычном сейве
         try {
             Log.i(TAG, "Saving game info...");
             KeyValueStore saveGameInfo = new KeyValueStore();
@@ -104,7 +104,7 @@ public class SaveGameRepository {
         mSaveGameInfos.add(0, saveGameInfo);
         return saveGameInfo;
     }
-
+// удалить сейв
     public void deleteSaveGame(SaveGameInfo saveGameInfo) {
         if (!mSaveGameInfos.contains(saveGameInfo)) {
             throw new RuntimeException("Unknown save game!");
@@ -128,7 +128,7 @@ public class SaveGameRepository {
             Log.e(TAG, "Failed to delete save game: " + folder.getAbsolutePath());
         }
     }
-
+// читает СГИ с верха кода
     private void readSaveGameInfos() {
         File rootdir = new File(mContext.getFilesDir() + File.separator
                 + "savegame" + File.separator);
@@ -151,12 +151,12 @@ public class SaveGameRepository {
             }
         }
     }
-
+// оно опять перегружается. я устал, босс. 
     private static SaveGameInfo readSaveGameInfo(File folder) {
         try {
             Log.i(TAG, "Reading save game:" + folder.getName());
             KeyValueStore gameInfoStore = KeyValueStore.fromStream(new FileInputStream(new File(folder, GAME_INFO_FILE)));
-
+// подставляем из файла
             Date date = gameInfoStore.getDate("date");
             int score = gameInfoStore.getInt("score");
             int wave = gameInfoStore.getInt("wave");
