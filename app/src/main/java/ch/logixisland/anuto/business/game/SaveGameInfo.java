@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Date;
 
 public final class SaveGameInfo {
-
+// ленивый класс для хранения инфы о партии
     private final File mFolder;
     private final Date mDate;
     private final int mScore;
@@ -22,7 +22,7 @@ public final class SaveGameInfo {
         mLives = lives;
         mScreenshot = screenshot;
     }
-
+// и её получения
     public File getFolder() {
         return mFolder;
     }
