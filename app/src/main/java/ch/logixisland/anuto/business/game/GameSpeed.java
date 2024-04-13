@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import ch.logixisland.anuto.engine.logic.GameEngine;
-
+// ускорение игры
 public class GameSpeed {
     private static final int MIN_FAST_FORWARD_SPEED = 2;
     private static final int MAX_FAST_FORWARD_SPEED = 32;
@@ -12,7 +12,7 @@ public class GameSpeed {
     public interface Listener {
         void gameSpeedChanged();
     }
-
+// опять импортируем всю игру сюда
     private final GameEngine mGameEngine;
     private final List<Listener> mListeners = new CopyOnWriteArrayList<>();
 
@@ -26,7 +26,7 @@ public class GameSpeed {
     public boolean isFastForwardActive() {
         return mFastForwardActive;
     }
-
+// разгон
     public void setFastForwardActive(final boolean active) {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(() -> setFastForwardActive(active));
@@ -42,13 +42,13 @@ public class GameSpeed {
     public int fastForwardMultiplier() {
         return mFastForwardMultiplier;
     }
-
+// прокликиваеи через все опции
     public void cycleFastForward() {
         if (mGameEngine.isThreadChangeNeeded()) {
             mGameEngine.post(this::cycleFastForward);
             return;
         }
-
+// формула приколов ускорения
         mFastForwardMultiplier = mFastForwardMultiplier < MAX_FAST_FORWARD_SPEED ? mFastForwardMultiplier * 2 : MIN_FAST_FORWARD_SPEED;
 
         updateTicks();
@@ -64,7 +64,7 @@ public class GameSpeed {
 
     private void updateTicks() {
         if (mFastForwardActive)
-            mGameEngine.setTicksPerLoop(mFastForwardMultiplier);
+ // само ускорение. по сути весь остальной файл не нужен.    mGameEngine.setTicksPerLoop(mFastForwardMultiplier);
         else
             mGameEngine.setTicksPerLoop(1);
 
